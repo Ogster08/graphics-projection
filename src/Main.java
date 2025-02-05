@@ -1,7 +1,5 @@
-import LinearAlgebra.Matrices.Matrix;
-import LinearAlgebra.Vectors.Vector;
-import LinearAlgebra.Vectors.Vector2D;
-import LinearAlgebra.Vectors.Vector3D;
+import LinearAlgebra.Vectors.*;
+import LinearAlgebra.Matrices.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,5 +9,6 @@ public class Main {
         System.out.println(A.MatrixScalarProduct(5));
         System.out.println(Matrix.MatrixProduct(A,B));
         System.out.println(A.MatrixVectorProduct(V));
+        System.out.println(B.Transpose());
     }
 }

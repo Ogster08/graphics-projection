@@ -46,6 +46,16 @@ public class Matrix {
         return new Vector(values);
     }
 
+    public Matrix Transpose(){
+        double[][] values = new double[this.rows][this.columns];
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.columns; j++) {
+                values[i][j] = this.values[j][i];
+            }
+        }
+        return new Matrix(values);
+    }
+
     public static Matrix MatrixProduct(Matrix A, Matrix B) throws IllegalArgumentException {
         if (A.columns != B.rows){
             throw new IllegalArgumentException("this matrix must have the same number of columns as the input matrix's rows");
