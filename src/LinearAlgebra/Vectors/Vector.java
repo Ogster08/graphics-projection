@@ -3,6 +3,8 @@ package LinearAlgebra.Vectors;
 import java.util.Arrays;
 
 public class Vector {
+    //TODO: Make all subclass variables like x,y,z,w dependant on the values variable
+
     protected double[] values;
 
     public Vector(double[] values){

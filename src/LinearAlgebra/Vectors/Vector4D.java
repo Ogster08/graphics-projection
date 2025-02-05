@@ -11,7 +11,7 @@ public class Vector4D extends Vector{
     public Vector4D(double[] values) {
         super(values);
         if (values.length != 4){
-            throw  new IllegalArgumentException("Vector must have exactly 3 dimensions");
+            throw  new IllegalArgumentException("Vector must have exactly 4 dimensions");
         }
         this.x = values[0];
         this.y = values[1];
@@ -25,6 +25,39 @@ public class Vector4D extends Vector{
         this.y = y;
         this.z = z;
         this.w = w;
+    }
+
+    protected Vector4D(double[] values, Boolean potentialDefaultW){
+        super(values);
+        if (potentialDefaultW){
+            if (values.length == 3){
+                this.x = values[0];
+                this.y = values[1];
+                this.z = values[2];
+                double[] newVals = new double[4];
+                System.arraycopy(values, 0, newVals, 0, 3);
+                newVals[3] = 1;
+                setValues(newVals);
+                this.w = 1;
+            } else if (values.length == 4){
+                this.x = values[0];
+                this.y = values[1];
+                this.z = values[2];
+                this.w = values[3];
+            } else {
+                throw  new IllegalArgumentException("Requires 3 or 4 inputs");
+            }
+        }else {
+            if (values.length != 4){
+                throw  new IllegalArgumentException("Vector must have exactly 4 dimensions");
+            }
+            this.x = values[0];
+            this.y = values[1];
+            this.z = values[2];
+            this.w = values[3];
+        }
+
+
     }
 
     public static Vector4D x(){

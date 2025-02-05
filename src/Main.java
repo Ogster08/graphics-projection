@@ -1,3 +1,4 @@
+import AffineGeometry.HomogeneousCoordinates;
 import LinearAlgebra.Vectors.*;
 import LinearAlgebra.Matrices.*;
 
@@ -10,5 +11,7 @@ public class Main {
         System.out.println(Matrix.MatrixProduct(A,B));
         System.out.println(A.MatrixVectorProduct(V));
         System.out.println(B.Transpose());
+        HomogeneousCoordinates X = new HomogeneousCoordinates(new double[] {1,2,3});
+        System.out.println(X);
     }
 }
